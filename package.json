@@ -32,6 +32,7 @@
     "react-dom": "19.0.0-rc-66855b96-20241106",
     "sanity": "^3.65.1",
     "sanity-plugin-markdown": "^5.0.0",
+    "server-only": "^0.0.1",
     "styled-components": "^6.1.13",
     "tailwind-merge": "^2.5.5",
     "tailwindcss-animate": "^1.0.7"

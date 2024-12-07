@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import "easymde/dist/easymde.min.css";
+import { SanityLive } from "@/sanity/lib/live";
 const workSans = localFont({
   src: [
     {
@@ -60,7 +61,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={workSans.variable}>{children}</body>
+      <body className={workSans.variable}>
+        {children}
+        <SanityLive />
+      </body>
     </html>
   );
 }
