@@ -22,7 +22,7 @@ const workSans = localFont({
       style: "normal",
     },
     {
-      path: "./fonts/WorkSans-Semibold.ttf",
+      path: "./fonts/WorkSans-SemiBold.ttf",
       weight: "600",
       style: "normal",
     },
@@ -34,6 +34,11 @@ const workSans = localFont({
     {
       path: "./fonts/WorkSans-Regular.ttf",
       weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/WorkSans-Black.ttf",
+      weight: "900",
       style: "normal",
     },
     {
@@ -51,7 +56,7 @@ const workSans = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "YC Directory",
+  title: "ES pitch",
   description: "Pitch, Vote and Grow",
 };
 
