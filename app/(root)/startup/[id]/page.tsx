@@ -13,7 +13,6 @@ import markdownit from "markdown-it";
 import { Skeleton } from "@/components/ui/skeleton";
 import View from "@/components/View";
 import StartupCard, { StartupTypeCard } from "@/components/StartupCard";
-const expermental_ppr = true;
 const md = markdownit();
 
 const page = async ({ params }: { params: Promise<{ id: string }> }) => {
