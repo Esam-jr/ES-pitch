@@ -32,7 +32,7 @@ export const startUps = defineType({
       type: "text",
     }),
     defineField({
-      name: "categories",
+      name: "category",
       type: "string",
       validation: (Rule) =>
         Rule.min(1).max(20).required().error("Please enter a catagory"),

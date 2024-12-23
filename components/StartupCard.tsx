@@ -10,24 +10,16 @@ import { Skeleton } from "@/components/ui/skeleton";
 export type StartupTypeCard = Omit<Startups, "author"> & { author?: Author };
 
 function StartupCard({ post }: { post: StartupTypeCard }) {
-  const {
-    _createdAt,
-    view,
-    author,
-    _id,
-    image,
-    categories,
-    description,
-    title,
-  } = post;
+  const { _createdAt, view, author, _id, image, category, description, title } =
+    post;
   return (
     <li className="startup-card group">
       <div className="flex-between">
-        <p className="startup_card_date bg-pink-200 rounded-[70px] p-2">
+        <p className="startup_card_date bg-lime-200 rounded-[70px] p-2">
           {formateDate(_createdAt)}
         </p>
         <div className="flex gap-1.5">
-          <EyeIcon className="size-6 text-primary" />
+          <EyeIcon className="size-6 text-lime-500" />
           <span className="text-16-medium">{view}</span>
         </div>
       </div>
@@ -42,7 +34,7 @@ function StartupCard({ post }: { post: StartupTypeCard }) {
         </div>
         <Link href={`/user/${author?._id}`}>
           <Image
-            src="https://placehold.co/48x48"
+            src={author?.image!}
             alt="placeholder"
             width={48}
             height={48}
@@ -55,8 +47,8 @@ function StartupCard({ post }: { post: StartupTypeCard }) {
         <img src={image} alt="placeholder" className="startup-card_img" />
       </Link>
       <div className="flex-between gap-3 mt-5 ">
-        <Link href={`/?query=${categories}`}>
-          <p className="text-16-medium">{categories?.toLowerCase()}</p>
+        <Link href={`/?query=${category}`}>
+          <p className="text-16-medium">{category?.toLowerCase()}</p>
         </Link>
         <Button className="startup-card_btn" asChild>
           <Link href={`/startup/${_id}`}>Details</Link>

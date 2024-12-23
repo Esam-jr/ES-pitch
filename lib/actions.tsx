@@ -18,7 +18,7 @@ export const createPitch = async (
       status: "ERROR",
     });
 
-  const { title, description, categories, link } = Object.fromEntries(
+  const { title, description, category, link } = Object.fromEntries(
     Array.from(form).filter(([key]) => key !== "pitch")
   );
 
@@ -28,7 +28,7 @@ export const createPitch = async (
     const startup = {
       title,
       description,
-      categories,
+      category,
       image: link,
       slug: {
         _type: slug,

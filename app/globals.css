@@ -48,7 +48,7 @@
   }
 
   .pink_container {
-    @apply w-full bg-primary min-h-[530px] pattern flex justify-center items-center flex-col py-10 px-6;
+    @apply w-full bg-lime-500 min-h-[530px] pattern flex justify-center items-center flex-col py-10 px-6;
   }
 
   .tag {
@@ -56,7 +56,7 @@
   }
 
   .heading {
-    @apply uppercase bg-black px-6 py-3 font-work-sans font-extrabold text-white sm:text-[54px] sm:leading-[64px] text-[36px] leading-[46px] max-w-5xl text-center my-5;
+    @apply uppercase bg-black rounded-xl px-6 py-3 font-work-sans font-extrabold text-white sm:text-[54px] sm:leading-[64px] text-[36px] leading-[46px] max-w-5xl text-center my-5;
   }
 
   .sub-heading {
@@ -85,7 +85,7 @@
   }
 
   .profile_card {
-    @apply w-80 px-6 pb-6 pt-20 flex flex-col justify-center items-center bg-primary border-[5px] border-black shadow-100 rounded-[30px] relative z-0 h-fit max-lg:w-full;
+    @apply w-80 px-6 pb-6 pt-20 flex flex-col justify-center items-center bg-lime-500 border-[5px] border-black shadow-100 rounded-[30px] relative z-0 h-fit max-lg:w-full;
   }
 
   .profile_title {
@@ -133,11 +133,11 @@
 
   /* startupcard */
   .startup-card {
-    @apply bg-white border-[5px] border-black py-6 px-5 rounded-[22px] shadow-200 hover:border-primary transition-all duration-500 hover:shadow-300 hover:bg-primary-100;
+    @apply bg-white border-[5px] border-black py-6 px-5 rounded-[22px] shadow-200 hover:border-lime-500 transition-all duration-500 hover:shadow-300 hover:bg-lime-100;
   }
 
   .startup-card_date {
-    @apply font-medium text-[16px] bg-primary-100 px-4 py-2 rounded-full group-hover:bg-white-100;
+    @apply font-medium text-[16px] bg-lime-100 px-4 py-2 rounded-full group-hover:bg-white-100;
   }
 
   .startup-card_desc {
@@ -182,7 +182,7 @@
   }
 
   .startup-form_btn {
-    @apply bg-primary border-[4px] border-black rounded-full p-5 min-h-[70px] w-full font-bold text-[18px] !important;
+    @apply bg-lime-500 border-[4px] border-black rounded-full p-5 min-h-[70px] w-full font-bold text-[18px] !important;
   }
 
   /* view */
@@ -191,11 +191,11 @@
   }
 
   .view-text {
-    @apply font-medium text-[16px] bg-primary-100 px-4 py-2 rounded-lg capitalize;
+    @apply font-medium text-[16px] bg-lime-100 px-4 py-2 rounded-lg capitalize;
   }
 
   .category-tag {
-    @apply font-medium text-[16px] bg-primary-100 px-4 py-2 rounded-full;
+    @apply font-medium text-[16px] bg-lime-100 px-4 py-2 rounded-full;
   }
 
   .pattern {
