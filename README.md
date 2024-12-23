@@ -62,3 +62,31 @@ AUTH_GITHUB_SECRET=your-github-client-secret
 SANITY_PROJECT_ID=your-sanity-project-id
 SANITY_DATASET=your-sanity-dataset
 `````````
+## 🚀 Deployment
+
+### To deploy your ES Pitch project on Vercel, follow these steps:
+
+### 1. Push your changes to GitHub:
+
+If you've made local changes and want to push them to your GitHub repo:
+
+```bash
+git add .
+git commit -m "Initial setup for deployment"
+git push origin main
+ ```
+### Deploy with Vercel
+
+Vercel automatically detects **Next.js** apps and handles deployments for you. Here’s how to deploy:
+
+1. Visit [Vercel](https://vercel.com) and log in.
+2. Click the **New Project** button.
+3. Select your GitHub repository from the list.
+4. Follow the prompts to connect your repository to Vercel and deploy it.
+
+#### Automatic Deployment
+
+After every push to your `main` branch, Vercel will automatically deploy the latest changes to your live site.
+
+You can check the live version of your app at the URL provided by Vercel, typically like this:  
+[https://es-pitch.vercel.app](https://es-pitch.vercel.app)
