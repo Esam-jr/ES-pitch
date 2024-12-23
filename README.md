@@ -49,7 +49,7 @@
 
    ```bash
    npm install
-```
+   ```
 
 *Set Up Environment Variables**
 
