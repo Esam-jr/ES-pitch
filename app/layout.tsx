@@ -12,7 +12,7 @@ const workSans = localFont({
       style: "normal",
     },
     {
-      path: "./fonts/WorkSans-Extrabold.ttf",
+      path: "./fonts/WorkSans-ExtraBold.ttf",
       weight: "800",
       style: "normal",
     },
