@@ -12,11 +12,6 @@
     "typegen": "npx sanity schema extract && npx sanity typegen generate"
   },
   "packageManager": "npm@10.5.2",
-  "overrides": {
-    "react": "$react",
-    "react-dom": "$react",
-    "next": "$next"
-  },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.2",
     "@radix-ui/react-slot": "^1.1.0",
