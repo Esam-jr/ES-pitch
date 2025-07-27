@@ -24,24 +24,29 @@ export default async function Home({
     <>
       <section className="pink_container">
         <h1 className="heading">
-          Pitch your startups <br /> connect with Enterepreneurs
+          Pitch your startups <br /> connect with Entrepreneurs
         </h1>
         <p className="sub-heading !max-w-3xl">
           Submit Ideas, Vote on Pitches, and Get Noticed in Virtual Competitions
         </p>
         <SearchForm query={query} />
       </section>
-      <section className="section_container">
-        <p className="text-30-semibold">
+      <section className="section_container bg-gradient-to-b from-white to-accent-50">
+        <h2 className="text-2xl font-bold text-black-700 mb-8">
           {query ? `Search result for "${query}"` : "All Startups"}
-        </p>
+        </h2>
         <ul className="mt-7 card_grid">
           {posts?.length > 0 ? (
             posts.map((post: StartupTypeCard) => (
               <StartupCard key={post?._id} post={post} />
             ))
           ) : (
-            <p className="no-results">No Startups Found.</p>
+            <div className="text-center py-12">
+              <p className="text-lg text-accent-500">No Startups Found.</p>
+              <p className="text-sm text-accent-400 mt-2">
+                Try adjusting your search terms or browse all startups.
+              </p>
+            </div>
           )}
         </ul>
       </section>

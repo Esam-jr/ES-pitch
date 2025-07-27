@@ -8,7 +8,7 @@ const Navbar = async () => {
   const session = await auth();
 
   return (
-    <header className="px-5 py-3 bg-[#E5E7EB] shadow-sm font-work-sans">
+    <header className="px-5 py-4 bg-white border-b border-accent-200 shadow-lg font-work-sans backdrop-blur-sm">
       <nav className="flex justify-between items-center">
         <Link href="/">
           <Image src="/logo.png" alt="logo" width={144} height={30} />
@@ -18,7 +18,7 @@ const Navbar = async () => {
           {session && session?.user ? (
             <>
               <Link href="/startup/create">
-                <span className="max-sm:hidden bg-black text-white px-4 py-2 rounded-lg font-semibold shadow-lg hover:bg-lime-600 hover:shadow-xl transition-all duration-300 ease-in-out">
+                <span className="max-sm:hidden bg-primary-500 text-white px-6 py-2 rounded-lg font-semibold shadow-md hover:bg-primary-600 hover:shadow-lg transition-all duration-200 ease-in-out">
                   Create
                 </span>
                 <BadgePlus className="size-6 sm:hidden" />
@@ -32,11 +32,11 @@ const Navbar = async () => {
               >
                 <button
                   type="submit"
-                  className="max-sm:hidden text-black px-4 py-1 rounded-lg font-semibold  hover:bg-red-500 hover:shadow-xl transition-all duration-300 ease-in-out"
+                  className="max-sm:hidden text-error-600 hover:text-white px-4 py-2 rounded-lg font-semibold hover:bg-error-500 hover:shadow-lg transition-all duration-200 ease-in-out"
                 >
                   Logout
                 </button>
-                <LogOut className="size-6 sm:hidden text-red-500" />
+                <LogOut className="size-6 sm:hidden text-error-500 hover:text-error-600 transition-colors duration-200" />
               </form>
 
               <Link href={`/user/${session?.id}`}>
@@ -58,7 +58,7 @@ const Navbar = async () => {
             >
               <button
                 type="submit"
-                className="bg-black text-white px-4 py-1 rounded-lg font-semibold shadow-lg hover:bg-blue-600 hover:shadow-xl transition-all duration-300 ease-in-out"
+                className="bg-primary-500 text-white px-6 py-2 rounded-lg font-semibold shadow-md hover:bg-primary-600 hover:shadow-lg transition-all duration-200 ease-in-out"
               >
                 Login
               </button>

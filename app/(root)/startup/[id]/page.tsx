@@ -30,55 +30,61 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
 
   return (
     <>
-      <section className="pink_container !min-h-[230px]">
-        <p className="tag">{formateDate(post?._createdAt)}</p>
+      <section className="pink_container !min-h-[280px]">
+        <div className="tag mb-4">{formateDate(post?._createdAt)}</div>
         <h1 className="heading">{post.title}</h1>
         <p className="sub-heading !min-w-5xl">{post.description}</p>
       </section>
-      <section className="section_container">
+      <section className="section_container bg-gradient-to-b from-white to-accent-50">
         <img
           src={post.image}
           alt="thumbnail"
-          className="w-full h-auto rounded-xl"
+          className="w-full h-auto rounded-2xl shadow-xl border border-accent-200"
         />
-        <div className="space-y-5 mt-10 max-w-4xl mx-auto">
-          <div className="flex-between gap-5">
+        <div className="space-y-6 mt-12 max-w-4xl mx-auto">
+          <div className="flex-between gap-5 bg-white p-6 rounded-2xl shadow-lg border border-accent-200">
             <Link
               href={`/user/${post.author?.id}`}
-              className="flex gap-2 items-center mb-3"
+              className="flex gap-4 items-center hover:bg-accent-50 p-3 rounded-xl transition-all duration-200"
             >
               <Image
                 src={post.author.image}
                 alt="avatar"
                 width={64}
                 height={64}
-                className="rounded-full drop-shadow-lg"
+                className="rounded-full drop-shadow-lg border-3 border-primary-200"
               />
               <div>
-                <p className="text-20-medium">{post.author.name}</p>
-                <p className="text-16-medium !text-black-300">
+                <p className="text-lg font-semibold text-black-700">
+                  {post.author.name}
+                </p>
+                <p className="text-sm font-medium text-accent-500">
                   @{post.author.username}
                 </p>
               </div>
             </Link>
-            <p className="category-tag">{post.category}</p>
+            <div className="category-tag">{post.category}</div>
           </div>
-          <h3 className="text-30-bold">Pitch Details</h3>
+          <div className="bg-white p-8 rounded-2xl shadow-lg border border-accent-200">
+            <h3 className="text-2xl font-bold text-black-700 mb-6 border-b border-accent-200 pb-4">
+              Pitch Details
+            </h3>
           {parsedContent ? (
             <article
-              className="prose max-w-4xl font-work-sans break-all"
+              className="prose prose-lg max-w-none font-work-sans break-words prose-headings:text-black-700 prose-p:text-accent-700 prose-a:text-primary-600 prose-strong:text-black-700"
               dangerouslySetInnerHTML={{ __html: parsedContent }}
             />
           ) : (
-            <p className="no-result">No detail provided</p>
+              <p className="text-accent-500 italic">No detail provided</p>
           )}
+          </div>
         </div>
         <hr className="divider" />
 
         {/* SELECTED STARTUPS */}
         {toppicks?.length > 0 && (
           <div className="max-w-4xl mx-auto">
-            <p className="text-30-semibold">Top Picks</p>
+            <h2 className="text-2xl font-bold text-black-700 mb-8">Top Picks</h2>
 
             <ul className="mt-7 card_grid-sm">
               {toppicks.map((post: StartupTypeCard, i: number) => (

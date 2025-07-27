@@ -15,21 +15,25 @@ function StartupCard({ post }: { post: StartupTypeCard }) {
   return (
     <li className="startup-card group">
       <div className="flex-between">
-        <p className="startup_card_date bg-lime-200 rounded-[70px] p-2">
+        <p className="startup-card_date">
           {formateDate(_createdAt)}
         </p>
         <div className="flex gap-1.5">
-          <EyeIcon className="size-6 text-lime-500" />
-          <span className="text-16-medium">{view}</span>
+          <EyeIcon className="size-5 text-accent-500" />
+          <span className="text-sm font-medium text-accent-600">{view}</span>
         </div>
       </div>
       <div className="flex-between mt-5 gap-5">
         <div className="flex-1">
           <Link href={`/user/${author?._id}`}>
-            <p className="text-16-medium line-clamp-1">{author?.name}</p>
+            <p className="text-sm font-medium text-accent-600 hover:text-primary-600 transition-colors duration-200 line-clamp-1">
+              {author?.name}
+            </p>
           </Link>
           <Link href={`/startup/${_id}`}>
-            <h1 className="text-26-semibold">{title}</h1>
+            <h1 className="text-xl font-bold text-black-700 hover:text-primary-600 transition-colors duration-200 mt-1">
+              {title}
+            </h1>
           </Link>
         </div>
         <Link href={`/user/${author?._id}`}>
@@ -38,7 +42,7 @@ function StartupCard({ post }: { post: StartupTypeCard }) {
             alt="placeholder"
             width={48}
             height={48}
-            className="rounded-full"
+            className="rounded-full border-2 border-accent-200 hover:border-primary-300 transition-all duration-200 hover:scale-105 shadow-md"
           />
         </Link>
       </div>
@@ -48,7 +52,9 @@ function StartupCard({ post }: { post: StartupTypeCard }) {
       </Link>
       <div className="flex-between gap-3 mt-5 ">
         <Link href={`/?query=${category}`}>
-          <p className="text-16-medium">{category?.toLowerCase()}</p>
+          <p className="text-sm font-medium text-secondary-600 hover:text-secondary-700 transition-colors duration-200 bg-secondary-50 px-3 py-1 rounded-full">
+            {category?.toLowerCase()}
+          </p>
         </Link>
         <Button className="startup-card_btn" asChild>
           <Link href={`/startup/${_id}`}>Details</Link>

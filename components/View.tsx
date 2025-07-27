@@ -19,12 +19,12 @@ const View = async ({ id }: { id: string }) => {
 
   return (
     <div className="view-container">
-      <div className="absolute -top-2 -right-2">
+      <div className="absolute -top-1 -right-1">
         <Ping />
       </div>
 
       <p className="view-text">
-        <span className="font-black">Views: {totalViews}</span>
+        <span className="font-semibold">Views: {totalViews}</span>
       </p>
     </div>
   );

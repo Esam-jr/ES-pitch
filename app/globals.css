@@ -48,15 +48,15 @@
   }
 
   .pink_container {
-    @apply w-full bg-lime-500 min-h-[530px] pattern flex justify-center items-center flex-col py-10 px-6;
+    @apply w-full bg-gradient-to-br from-primary-500 via-primary-600 to-primary-700 min-h-[530px] pattern flex justify-center items-center flex-col py-10 px-6;
   }
 
   .tag {
-    @apply bg-secondary px-6 py-3 font-work-sans font-bold rounded-sm uppercase relative tag-tri;
+    @apply bg-secondary-400 text-black-800 px-6 py-3 font-work-sans font-bold rounded-lg uppercase shadow-lg;
   }
 
   .heading {
-    @apply uppercase bg-black rounded-xl px-6 py-3 font-work-sans font-extrabold text-white sm:text-[54px] sm:leading-[64px] text-[36px] leading-[46px] max-w-5xl text-center my-5;
+    @apply uppercase bg-gradient-to-r from-black-800 to-black-700 rounded-2xl px-8 py-4 font-work-sans font-extrabold text-white sm:text-[54px] sm:leading-[64px] text-[36px] leading-[46px] max-w-5xl text-center my-5 shadow-2xl;
   }
 
   .sub-heading {
@@ -81,108 +81,108 @@
 
   /* profile */
   .profile_container {
-    @apply w-full pb-10 pt-20 px-6 max-w-7xl mx-auto lg:flex-row flex-col flex gap-10;
+    @apply w-full pb-10 pt-20 px-6 max-w-7xl mx-auto lg:flex-row flex-col flex gap-10 bg-gradient-to-br from-white-100 to-accent-50;
   }
 
   .profile_card {
-    @apply w-80 px-6 pb-6 pt-20 flex flex-col justify-center items-center bg-lime-500 border-[5px] border-black shadow-100 rounded-[30px] relative z-0 h-fit max-lg:w-full;
+    @apply w-80 px-6 pb-6 pt-20 flex flex-col justify-center items-center bg-gradient-to-br from-primary-50 to-primary-100 border-2 border-primary-200 shadow-2xl rounded-3xl relative z-0 h-fit max-lg:w-full;
   }
 
   .profile_title {
-    @apply w-11/12 bg-white border-[5px] border-black rounded-[20px] px-5 py-3 absolute -top-9 after:absolute after:content-[''] after:-top-1 after:right-0 after:-skew-y-6 after:bg-black after:-z-[1] after:rounded-[20px] after:w-full after:h-[60px] before:absolute before:content-[''] before:-bottom-1 before:left-0  before:-skew-y-6 before:w-full before:h-[60px] before:bg-black  before:-z-[1] before:rounded-[20px] shadow-100;
+    @apply w-11/12 bg-white border-2 border-primary-300 rounded-2xl px-5 py-3 absolute -top-9 shadow-xl;
   }
 
   .profile_image {
-    @apply rounded-full object-cover border-[3px] border-black;
+    @apply rounded-full object-cover border-4 border-primary-300 shadow-lg;
   }
 
   /* idea details */
   .divider {
-    @apply border-dotted bg-zinc-400 max-w-4xl my-10 mx-auto;
+    @apply border-dotted bg-accent-300 max-w-4xl my-10 mx-auto;
   }
 
   .view_skeleton {
-    @apply bg-zinc-400 h-10 w-24 rounded-lg fixed bottom-3 right-3;
+    @apply bg-accent-300 h-10 w-24 rounded-lg fixed bottom-3 right-3;
   }
 
   /* navbar */
   .avatar {
-    @apply p-0 focus-visible:ring-0 bg-none rounded-full drop-shadow-md !important;
+    @apply p-0 focus-visible:ring-2 focus-visible:ring-primary-400 bg-none rounded-full drop-shadow-lg hover:drop-shadow-xl transition-all duration-200 !important;
   }
 
   .dropdown-menu {
-    @apply w-56 border-[5px] border-black bg-white p-5 rounded-2xl !important;
+    @apply w-56 border-2 border-accent-200 bg-white p-5 rounded-2xl shadow-xl !important;
   }
 
   .login {
-    @apply border-[5px] py-4 border-black bg-white text-black relative shadow-100 font-work-sans font-medium hover:shadow-none transition-all duration-500 !important;
+    @apply border-2 py-3 px-6 border-primary-500 bg-primary-500 text-white relative shadow-lg font-work-sans font-medium hover:bg-primary-600 hover:border-primary-600 hover:shadow-xl transition-all duration-300 rounded-lg !important;
   }
 
   /* searchform */
   .search-form {
-    @apply max-w-3xl w-full min-h-[80px] bg-white border-[5px] border-black rounded-[80px] text-[24px] mt-8 px-5 flex flex-row items-center gap-5;
+    @apply max-w-3xl w-full min-h-[80px] bg-white border-2 border-accent-200 rounded-full text-[24px] mt-8 px-6 flex flex-row items-center gap-5 shadow-xl hover:shadow-2xl transition-all duration-300;
   }
 
   .search-input {
-    @apply flex-1 font-bold placeholder:font-semibold placeholder:text-black-100 w-full h-auto outline-none;
+    @apply flex-1 font-semibold placeholder:font-medium placeholder:text-accent-400 w-full h-auto outline-none;
   }
 
   .search-btn {
-    @apply size-[50px] rounded-full bg-black flex justify-center items-center !important;
+    @apply size-[50px] rounded-full bg-primary-500 hover:bg-primary-600 flex justify-center items-center transition-all duration-200 shadow-lg hover:shadow-xl !important;
   }
 
   /* startupcard */
   .startup-card {
-    @apply bg-white border-[5px] border-black py-6 px-5 rounded-[22px] shadow-200 hover:border-lime-500 transition-all duration-500 hover:shadow-300 hover:bg-lime-100;
+    @apply bg-white border-2 border-accent-200 py-6 px-6 rounded-2xl shadow-lg hover:border-primary-300 transition-all duration-300 hover:shadow-xl hover:bg-primary-50 hover:-translate-y-1;
   }
 
   .startup-card_date {
-    @apply font-medium text-[16px] bg-lime-100 px-4 py-2 rounded-full group-hover:bg-white-100;
+    @apply font-medium text-[14px] bg-accent-100 text-accent-700 px-3 py-1 rounded-full group-hover:bg-primary-100 group-hover:text-primary-700 transition-all duration-200;
   }
 
   .startup-card_desc {
-    @apply font-normal text-[16px] line-clamp-2 my-3 text-black-100 break-all;
+    @apply font-normal text-[16px] line-clamp-2 my-3 text-accent-600 break-all;
   }
 
   .startup-card_img {
-    @apply w-full h-[164px] rounded-[10px] object-cover;
+    @apply w-full h-[164px] rounded-xl object-cover shadow-md;
   }
 
   .startup-card_btn {
-    @apply rounded-full bg-black-200 font-medium text-[16px] text-white px-5 py-3 !important;
+    @apply rounded-lg bg-primary-500 hover:bg-primary-600 font-medium text-[14px] text-white px-4 py-2 transition-all duration-200 shadow-md hover:shadow-lg !important;
   }
 
   .startup-card_skeleton {
-    @apply w-full h-96 rounded-[22px] bg-zinc-400;
+    @apply w-full h-96 rounded-2xl bg-accent-200 animate-pulse;
   }
 
   /* startupform */
   .startup-form {
-    @apply max-w-2xl mx-auto bg-white my-10 space-y-8 px-6;
+    @apply max-w-2xl mx-auto bg-white my-10 space-y-8 px-8 py-8 rounded-2xl shadow-xl border border-accent-200;
   }
 
   .startup-form_label {
-    @apply font-bold text-[18px] text-black uppercase;
+    @apply font-semibold text-[16px] text-black-700 uppercase tracking-wide;
   }
 
   .startup-form_input {
-    @apply border-[3px] border-black px-5 py-7 text-[18px] text-black font-semibold rounded-full mt-3 placeholder:text-black-300 !important;
+    @apply border-2 border-accent-300 focus:border-primary-500 px-4 py-3 text-[16px] text-black-700 font-medium rounded-lg mt-3 placeholder:text-accent-400 focus:outline-none focus:ring-2 focus:ring-primary-200 transition-all duration-200 !important;
   }
 
   .startup-form_textarea {
-    @apply border-[3px] border-black p-5 text-[18px] text-black font-semibold rounded-[20px] mt-3 placeholder:text-black-300 !important;
+    @apply border-2 border-accent-300 focus:border-primary-500 p-4 text-[16px] text-black-700 font-medium rounded-lg mt-3 placeholder:text-accent-400 focus:outline-none focus:ring-2 focus:ring-primary-200 transition-all duration-200 !important;
   }
 
   .startup-form_error {
-    @apply text-red-500 mt-2 ml-5;
+    @apply text-error-500 mt-2 ml-2 text-sm;
   }
 
   .startup-form_editor {
-    @apply mt-3 border-[3px] border-black text-[18px] text-black font-semibold placeholder:text-black-300 !important;
+    @apply mt-3 border-2 border-accent-300 focus:border-primary-500 text-[16px] text-black-700 font-medium placeholder:text-accent-400 rounded-lg !important;
   }
 
   .startup-form_btn {
-    @apply bg-lime-500 border-[4px] border-black rounded-full p-5 min-h-[70px] w-full font-bold text-[18px] !important;
+    @apply bg-primary-500 hover:bg-primary-600 border-2 border-primary-500 hover:border-primary-600 rounded-lg p-4 min-h-[60px] w-full font-semibold text-[16px] text-white shadow-lg hover:shadow-xl transition-all duration-200 !important;
   }
 
   /* view */
@@ -191,28 +191,24 @@
   }
 
   .view-text {
-    @apply font-medium text-[16px] bg-lime-100 px-4 py-2 rounded-lg capitalize;
+    @apply font-medium text-[14px] bg-primary-100 text-primary-700 px-3 py-2 rounded-lg capitalize shadow-md;
   }
 
   .category-tag {
-    @apply font-medium text-[16px] bg-lime-100 px-4 py-2 rounded-full;
+    @apply font-medium text-[14px] bg-secondary-100 text-secondary-700 px-3 py-2 rounded-full shadow-sm;
   }
 
   .pattern {
     background-image: linear-gradient(
       to right,
       transparent 49.5%,
-      rgba(251, 232, 67, 0.2) 49.5%,
-      rgba(251, 232, 67, 0.6) 50.5%,
+      rgba(14, 165, 233, 0.1) 49.5%,
+      rgba(14, 165, 233, 0.3) 50.5%,
       transparent 50.5%
     );
     background-size: 5% 100%;
     background-position: center;
     background-repeat: repeat-x;
-  }
-
-  .tag-tri {
-    @apply before:content-[''] before:absolute before:top-2 before:left-2 before:border-t-[10px] before:border-t-black before:border-r-[10px] before:border-r-transparent after:content-[''] after:absolute after:bottom-2 after:right-2 after:border-b-[10px] after:border-b-black after:border-l-[10px] after:border-l-transparent;
   }
 }
 

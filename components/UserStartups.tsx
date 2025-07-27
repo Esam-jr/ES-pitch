@@ -13,7 +13,12 @@ const UserStartups = async ({ id }: { id: string }) => {
           <StartupCard key={startup._id} post={startup} />
         ))
       ) : (
-        <p className="no-result">No posts yet</p>
+        <div className="text-center py-12 bg-white rounded-2xl shadow-lg border border-accent-200">
+          <p className="text-lg text-accent-500 mb-2">No posts yet</p>
+          <p className="text-sm text-accent-400">
+            Start sharing your innovative ideas with the community!
+          </p>
+        </div>
       )}
     </>
   );
