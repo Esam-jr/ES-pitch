@@ -1,29 +1,42 @@
-import { Github, Linkedin } from "lucide-react";
+import { Github, Linkedin, Heart } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-r from-accent-50 to-accent-100 py-8 border-t border-accent-200">
-      <div className="container mx-auto text-center">
-        <p className="text-sm text-accent-600 font-medium">
-          Made with Passion &amp; Love by Esmael
-        </p>
-        <div className="mt-6 flex justify-center space-x-6">
+    <footer className="footer">
+      <div className="footer-content">
+        <div className="flex items-center justify-center gap-2 footer-text">
+          <span>Made with</span>
+          <Heart className="w-4 h-4 text-error-500 fill-current" />
+          <span>by</span>
+          <span className="font-semibold text-neutral-900">Esmael</span>
+        </div>
+        
+        <div className="footer-links">
           <a
             href="https://github.com/Esam-jr"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-accent-600 hover:text-primary-500 transition-all duration-200 hover:scale-110 p-2 rounded-lg hover:bg-white shadow-sm hover:shadow-md"
+            className="footer-link focus-ring"
+            aria-label="Visit Esmael's GitHub profile"
           >
-            <Github size={24} />
+            <Github className="w-5 h-5" />
           </a>
+          
           <a
             href="https://www.linkedin.com/in/esmael-sabir/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-accent-600 hover:text-primary-500 transition-all duration-200 hover:scale-110 p-2 rounded-lg hover:bg-white shadow-sm hover:shadow-md"
+            className="footer-link focus-ring"
+            aria-label="Visit Esmael's LinkedIn profile"
           >
-            <Linkedin size={24} />
+            <Linkedin className="w-5 h-5" />
           </a>
+        </div>
+        
+        <div className="mt-8 pt-8 border-t border-neutral-200">
+          <p className="text-sm text-neutral-500">
+            © 2024 ES Pitch. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

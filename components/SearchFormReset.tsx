@@ -9,14 +9,18 @@ function SearchFormReset() {
     const form = document.querySelector(".search-form") as HTMLFormElement;
     if (form) form.reset();
   };
+  
   return (
-    <div>
-      <button type="reset" onClick={reset}>
-        <Link href="/" className="search-btn text-white">
-          <X className="size-5" />{" "}
-        </Link>
-      </button>
-    </div>
+    <button 
+      type="reset" 
+      onClick={reset}
+      className="search-reset focus-ring"
+      aria-label="Clear search"
+    >
+      <Link href="/" className="flex items-center justify-center w-full h-full">
+        <X className="w-4 h-4" />
+      </Link>
+    </button>
   );
 }
 

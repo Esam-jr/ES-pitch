@@ -3,6 +3,7 @@ import Ping from "./Ping";
 import { STARTUP_VIEWS_QUERY } from "../sanity/lib/queries";
 import { after } from "next/server";
 import { writeClient } from "@/sanity/lib/write_client";
+import { Eye } from "lucide-react";
 
 const View = async ({ id }: { id: string }) => {
   const { view: totalViews } = await client
@@ -19,13 +20,15 @@ const View = async ({ id }: { id: string }) => {
 
   return (
     <div className="view-container">
-      <div className="absolute -top-1 -right-1">
-        <Ping />
+      <div className="view-badge">
+        <div className="view-ping">
+          <Ping />
+        </div>
+        <Eye className="w-4 h-4 mr-2" />
+        <span className="font-semibold">
+          {totalViews || 0} {totalViews === 1 ? 'view' : 'views'}
+        </span>
       </div>
-
-      <p className="view-text">
-        <span className="font-semibold">Views: {totalViews}</span>
-      </p>
     </div>
   );
 };

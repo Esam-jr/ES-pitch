@@ -8,20 +8,28 @@ const Navbar = async () => {
   const session = await auth();
 
   return (
-    <header className="px-5 py-4 bg-white border-b border-accent-200 shadow-lg font-work-sans backdrop-blur-sm">
-      <nav className="flex justify-between items-center">
-        <Link href="/">
-          <Image src="/logo.png" alt="logo" width={144} height={30} />
+    <header className="navbar">
+      <nav className="navbar-container">
+        <Link href="/" className="navbar-logo">
+          <Image 
+            src="/logo.png" 
+            alt="ES Pitch Logo" 
+            width={144} 
+            height={30}
+            className="h-8 w-auto"
+          />
         </Link>
 
-        <div className="flex items-center gap-5 text-black">
+        <div className="navbar-actions">
           {session && session?.user ? (
             <>
-              <Link href="/startup/create">
-                <span className="max-sm:hidden bg-primary-500 text-white px-6 py-2 rounded-lg font-semibold shadow-md hover:bg-primary-600 hover:shadow-lg transition-all duration-200 ease-in-out">
-                  Create
-                </span>
-                <BadgePlus className="size-6 sm:hidden" />
+              <Link href="/startup/create" className="navbar-button mobile-hidden">
+                Create Pitch
+              </Link>
+              
+              <Link href="/startup/create" className="mobile-only">
+                <BadgePlus className="w-6 h-6 text-primary-600" />
+                <span className="sr-only">Create Pitch</span>
               </Link>
 
               <form
@@ -32,20 +40,29 @@ const Navbar = async () => {
               >
                 <button
                   type="submit"
-                  className="max-sm:hidden text-error-600 hover:text-white px-4 py-2 rounded-lg font-semibold hover:bg-error-500 hover:shadow-lg transition-all duration-200 ease-in-out"
+                  className="navbar-button-secondary mobile-hidden focus-ring"
                 >
-                  Logout
+                  Sign Out
                 </button>
-                <LogOut className="size-6 sm:hidden text-error-500 hover:text-error-600 transition-colors duration-200" />
+                
+                <button
+                  type="submit"
+                  className="mobile-only p-2 rounded-lg hover:bg-neutral-100 transition-colors duration-200 focus-ring"
+                >
+                  <LogOut className="w-5 h-5 text-error-500" />
+                  <span className="sr-only">Sign Out</span>
+                </button>
               </form>
 
-              <Link href={`/user/${session?.id}`}>
-                <Avatar className="size-10">
+              <Link href={`/user/${session?.id}`} className="focus-ring rounded-full">
+                <Avatar className="navbar-avatar">
                   <AvatarImage
                     src={session?.user?.image || ""}
-                    alt={session?.user?.name || ""}
+                    alt={session?.user?.name || "User Avatar"}
                   />
-                  <AvatarFallback>AV</AvatarFallback>
+                  <AvatarFallback className="bg-primary-100 text-primary-700 font-semibold">
+                    {session?.user?.name?.charAt(0)?.toUpperCase() || "U"}
+                  </AvatarFallback>
                 </Avatar>
               </Link>
             </>
@@ -58,9 +75,9 @@ const Navbar = async () => {
             >
               <button
                 type="submit"
-                className="bg-primary-500 text-white px-6 py-2 rounded-lg font-semibold shadow-md hover:bg-primary-600 hover:shadow-lg transition-all duration-200 ease-in-out"
+                className="navbar-button focus-ring"
               >
-                Login
+                Sign In with GitHub
               </button>
             </form>
           )}
