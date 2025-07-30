@@ -83,7 +83,7 @@
 
   /* Startup Cards */
   .startup-card {
-    @apply group relative bg-white rounded-2xl border border-neutral-200 p-6 shadow-soft hover:shadow-medium transition-all duration-300 hover:-translate-y-1 hover:border-primary-200 animate-fade-in;
+    @apply relative bg-white rounded-2xl border border-neutral-200 p-6 shadow-soft hover:shadow-medium transition-all duration-300 hover:-translate-y-1 hover:border-primary-200 animate-fade-in;
   }
 
   .startup-card::before {
