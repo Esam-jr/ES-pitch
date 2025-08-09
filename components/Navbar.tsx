@@ -3,12 +3,14 @@ import Image from "next/image";
 import { auth, signOut, signIn } from "@/auth";
 import { BadgePlus, LogOut } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import NavScrollEffect from "./NavScrollEffect";
 
 const Navbar = async () => {
   const session = await auth();
 
   return (
-    <header className="navbar">
+    <header id="site-navbar" className="navbar">
+      <NavScrollEffect />
       <nav className="navbar-container">
         <Link href="/" className="navbar-logo">
           <Image 
