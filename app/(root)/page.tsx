@@ -4,6 +4,7 @@ import { STARTUPS_QUERY } from "@/sanity/lib/queries";
 import { sanityFetch } from "@/sanity/lib/live";
 import { auth } from "@/auth";
 import { Rocket, TrendingUp, Users, ArrowRight, PlayCircle } from "lucide-react";
+import Particles from "@/components/Particles";
 
 export default async function Home({
   searchParams,
@@ -22,6 +23,8 @@ export default async function Home({
   return (
     <>
       <section className="hero-container">
+        {/* particle background */}
+        <Particles className="absolute inset-0 z-0 pointer-events-none" density={0.00006} maxParticles={140} connectDistance={120} />
         {/* backdrop visuals */}
         <div aria-hidden className="hero-spotlight" />
         <div aria-hidden className="hero-orb primary one" />

@@ -79,6 +79,12 @@
     @apply relative z-10 inline-flex items-center px-4 py-2 bg-primary-100 text-primary-700 text-sm font-medium rounded-full border border-primary-200 shadow-soft mb-6;
   }
 
+  /* Canvas layering utility for hero particles */
+  .hero-container canvas {
+    position: absolute;
+    inset: 0;
+  }
+
   .hero-title {
     @apply relative z-10 text-4xl md:text-6xl lg:text-7xl font-black text-center max-w-5xl leading-tight;
     background: linear-gradient(135deg, #0f172a 0%, #334155 50%, #0ea5e9 100%);
