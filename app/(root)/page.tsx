@@ -1,9 +1,9 @@
-import SearchForm from "../../components/SearchForm";
+import SearchForm from "@/components/SearchForm";
 import StartupCard, { StartupTypeCard } from "@/components/StartupCard";
 import { STARTUPS_QUERY } from "@/sanity/lib/queries";
 import { sanityFetch } from "@/sanity/lib/live";
 import { auth } from "@/auth";
-import { Rocket, TrendingUp, Users } from "lucide-react";
+import { Rocket, TrendingUp, Users, ArrowRight, PlayCircle } from "lucide-react";
 
 export default async function Home({
   searchParams,
@@ -22,6 +22,12 @@ export default async function Home({
   return (
     <>
       <section className="hero-container">
+        {/* backdrop visuals */}
+        <div aria-hidden className="hero-spotlight" />
+        <div aria-hidden className="hero-orb primary one" />
+        <div aria-hidden className="hero-orb secondary two" />
+        <div aria-hidden className="hero-orb primary three" />
+
         <div className="hero-badge">
           <Rocket className="w-4 h-4 mr-2" />
           <span>Welcome to ES Pitch</span>
@@ -37,6 +43,15 @@ export default async function Home({
         </p>
         
         <SearchForm query={query} />
+
+        <div className="hero-cta-group">
+          <a href="/startup/create" className="hero-cta-primary">
+            Get Started <ArrowRight className="w-4 h-4 ml-2" />
+          </a>
+          <a href="#discover" className="hero-cta-secondary">
+            Watch Demo <PlayCircle className="w-5 h-5 ml-2 text-primary-500" />
+          </a>
+        </div>
         
         <div className="flex items-center justify-center gap-8 mt-12 text-sm text-neutral-600">
           <div className="flex items-center gap-2">
@@ -50,7 +65,7 @@ export default async function Home({
         </div>
       </section>
 
-      <section className="section-container bg-gradient-to-b from-white to-neutral-50">
+      <section id="discover" className="section-container bg-gradient-to-b from-white to-neutral-50">
         <div className="text-center mb-12">
           <h2 className="section-title">
             {query ? (

@@ -5,7 +5,7 @@ import {
 } from "@/sanity/lib/queries";
 import { notFound } from "next/navigation";
 import React, { Suspense } from "react";
-import formateDate from "../../../../lib/utils";
+import formateDate from "@/lib/utils";
 import Link from "next/link";
 import Image from "next/image";
 import markdownit from "markdown-it";
@@ -66,7 +66,7 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
           <div className="detail-header">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
               <Link
-                href={`/user/${post.author?.id}`}
+                href={`/user/${post.author?._id}`}
                 className="detail-author focus-ring rounded-xl"
               >
                 <div className="detail-author-avatar">

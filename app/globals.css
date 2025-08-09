@@ -38,7 +38,7 @@
 
   /* Hero Section */
   .hero-container {
-    @apply relative w-full bg-gradient-to-br from-primary-50 via-white to-secondary-50 min-h-[600px] flex justify-center items-center flex-col py-20 px-6 overflow-hidden;
+    @apply relative w-full bg-gradient-to-br from-primary-50 via-white to-secondary-50 min-h-[640px] flex justify-center items-center flex-col py-24 px-6 overflow-hidden;
   }
 
   .hero-container::before {
@@ -46,6 +46,34 @@
     @apply absolute inset-0 opacity-40;
     background-image: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%230ea5e9" fill-opacity="0.03"%3E%3Ccircle cx="30" cy="30" r="4"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
   }
+
+  /* Hero spotlight behind the title */
+  .hero-spotlight {
+    position: absolute;
+    inset: -10% -10% auto -10%;
+    height: 480px;
+    background: radial-gradient(ellipse at center, rgba(14,165,233,0.18), rgba(14,165,233,0.08) 45%, rgba(255,255,255,0) 70%);
+    filter: blur(24px);
+    pointer-events: none;
+  }
+
+  /* Floating orbs */
+  .hero-orb {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(18px);
+    opacity: 0.25;
+    pointer-events: none;
+  }
+  .hero-orb.primary {
+    background: radial-gradient(circle at 30% 30%, rgba(14,165,233,0.35), rgba(14,165,233,0.1));
+  }
+  .hero-orb.secondary {
+    background: radial-gradient(circle at 30% 30%, rgba(245,158,11,0.35), rgba(245,158,11,0.1));
+  }
+  .hero-orb.one { width: 280px; height: 280px; top: 6%; left: 10%; animation: float 14s ease-in-out infinite; }
+  .hero-orb.two { width: 220px; height: 220px; top: 16%; right: 8%; animation: float 16s ease-in-out infinite reverse; }
+  .hero-orb.three { width: 320px; height: 320px; bottom: 8%; left: 20%; animation: float 18s ease-in-out infinite; }
 
   .hero-badge {
     @apply relative z-10 inline-flex items-center px-4 py-2 bg-primary-100 text-primary-700 text-sm font-medium rounded-full border border-primary-200 shadow-soft mb-6;
@@ -61,6 +89,18 @@
 
   .hero-subtitle {
     @apply relative z-10 text-lg md:text-xl text-neutral-600 max-w-3xl text-center mt-6 leading-relaxed font-medium;
+  }
+
+  .hero-cta-group {
+    @apply relative z-10 mt-8 flex items-center gap-4;
+  }
+
+  .hero-cta-primary {
+    @apply inline-flex items-center px-6 py-3 bg-primary-500 hover:bg-primary-600 text-white font-semibold rounded-lg shadow-soft hover:shadow-medium transition-all duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+  }
+
+  .hero-cta-secondary {
+    @apply inline-flex items-center px-6 py-3 bg-white hover:bg-neutral-50 text-neutral-700 font-semibold rounded-lg border border-neutral-200 shadow-soft hover:shadow-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
   }
 
   /* Section Containers */
@@ -258,7 +298,7 @@
   }
 
   .detail-author-avatar {
-    @apply w-16 h-16 rounded-full border-3 border-primary-200 shadow-soft;
+    @apply w-16 h-16 rounded-full border-2 border-primary-200 shadow-soft;
   }
 
   .detail-author-info {
@@ -416,4 +456,13 @@
 
 .prose blockquote {
   @apply border-l-4 border-primary-300 pl-4 italic text-neutral-600;
+}
+
+/* Custom hero animations */
+@keyframes float {
+  0% { transform: translateY(0px) translateX(0px); }
+  25% { transform: translateY(-10px) translateX(6px); }
+  50% { transform: translateY(0px) translateX(0px); }
+  75% { transform: translateY(8px) translateX(-6px); }
+  100% { transform: translateY(0px) translateX(0px); }
 }

@@ -6,10 +6,12 @@ export const STARTUPS_QUERY =
   title,
   _createdAt,
   author->{
+    _id,
     id,
     name,
     image,
-    bio
+    bio,
+    username
   },
   view,
   category,
@@ -23,7 +25,7 @@ export const STARTUP_BYID_QUERY = defineQuery(`
     _id,
     title,
     _createdAt,
-    author -> { id, name, image, bio,username },
+    author -> { _id, id, name, image, bio, username },
     view,
     category,
     description,

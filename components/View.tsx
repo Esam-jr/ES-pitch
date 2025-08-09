@@ -1,6 +1,6 @@
 import { client } from "@/sanity/lib/client";
 import Ping from "./Ping";
-import { STARTUP_VIEWS_QUERY } from "../sanity/lib/queries";
+import { STARTUP_VIEWS_QUERY } from "@/sanity/lib/queries";
 import { after } from "next/server";
 import { writeClient } from "@/sanity/lib/write_client";
 import { Eye } from "lucide-react";
@@ -14,7 +14,7 @@ const View = async ({ id }: { id: string }) => {
     async () =>
       await writeClient
         .patch(id)
-        .set({ view: totalViews + 1 })
+        .set({ view: (totalViews || 0) + 1 })
         .commit()
   );
 
